@@ -1,0 +1,47 @@
+<!--User Likes and Images
+					<% for(var i = 0; i < profile.likes.length; ++i) { %>
+								<img class="rounded likeImage" src="<%= profile.likes[i].image %>">
+							<h3 class="imageTitle"><%= profile.likes[i].name %></h3>
+					<% } %> -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Profile</title>
+	<link rel="stylesheet" type="text/css" href="/css/profile.css">
+	<% include ./partials/head %>
+</head>
+<body>
+	<% include ./partials/header %>
+	<div class="container-flex d-flex justify-content-center" id="cardContainer">
+		<div class="card bg-secondary">
+			<h1 class="card-title">Profile</h1>
+			<div class="card-body d-flex flex-column">
+				<div class="d-flex justify-content-center mt-0">
+					<img src="<%= profile.profilepicture %>" style="max-width: 200px; max-height: 200px;">
+				</div>
+				<div class="d-flex justify-content-center">
+					<form action="/changepp" method="post">
+							<input type="text" name="imageurl" placeholder="URL">
+							<button class="btn btn-primary btn-sm">Change</button>
+					</form>
+				</div>
+				<h1 style="text-decoration: underline;">User Info</h1>
+				<p><strong>Name: </strong> <%= profile.firstname + " " + profile.lastname %></p>
+				<h1 style="text-decoration: underline;">Images</h1>
+				<div class="d-flex flex-row flex-wrap">
+					<% for(var i = 0; i < profile.likes.length; ++i) { %>
+						<div class="likeContainer" style="margin: 10px;">
+							<img class="rounded likeImage" src="<%= profile.likes[i].image %>">
+							<h3 class="imageTitle"><%= profile.likes[i].name %></h3>
+							<a href="/removePicture/<%= i %>" class="btn btn-danger">Remove</a>
+						</div>
+					<% } %>
+				</div>
+			</div>
+		</div>
+	</div>
+	<% include ./partials/footer %>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login</title>
+	<link rel="stylesheet" type="text/css" href="/css/login.css">
+	<link rel="stylesheet" type="text/css" href="/css/searchSuccess.css">
+	<% include ./partials/head %>
+</head>
+<body>
+	<% include ./partials/header %>
+
+	<!--Login Body-->
+	<div class="container-fluid">
+        <div class="row">
+			<div class="col-md-5 mx-auto">
+				<div class="myform form ">
+					<div class="logo mb-3">
+						<div class="col-md-12 text-center">
+							<h1>Search Results</h1>
+						</div>
+					</div> 
+					<h4 class="text-center"><%= image.name %></h4>
+					<div class="d-flex justify-content-center">
+						<img id="resultImage" src="<%= image.link %>">
+					</div> 
+					<form action="/search/success" method="post">                
+	                    <div class="col-md-12 text-center ">
+	                    	<button type="submit" class=" btn mybtn btn-success">Add</button>
+	                    	<button type="submit" formaction="/search" formmethod="get" class=" btn mybtn btn-danger">Back</button>
+	                    </div>                          
+                    </form>                 
+				</div>
+			</div>
+		</div>
+	</div>
+	<% include ./partials/footer %>
+</body>
+</html>

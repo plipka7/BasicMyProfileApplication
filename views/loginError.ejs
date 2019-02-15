@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login</title>
+	<link rel="stylesheet" type="text/css" href="/css/login.css">
+	<% include ./partials/head %>
+</head>
+<body>
+	<% include ./partials/header %>
+
+	<!--Login Body-->
+	<div class="container-fluid">
+        <div class="row">
+			<div class="col-md-5 mx-auto">
+				<div class="myform form ">
+					<div class="logo mb-3">
+						 <div class="col-md-12 text-center">
+							<h1>Login</h1>
+							<h4 class="text-danger">Login error: Please enter valid account information.</h4>
+						 </div>
+					</div>
+                   <form action="/login" method="post" name="login">
+                           <div class="form-group">
+                              <label for="username">Username</label>
+                              <input type="username" name="username"  class="form-control" id="username" placeholder="Username">
+                           </div>
+                           <div class="form-group">
+                              <label for="password">Password</label>
+                              <input type="password" name="password" id="password"  class="form-control" placeholder="Enter Password">
+                           </div>
+                           <div class="col-md-12 text-center ">
+                              <button type="submit" class=" btn btn-block mybtn btn-primary tx-tfm">Login</button>
+                           </div>
+                           <div class="form-group">
+                              <p class="text-center">Don't have account? <a href="/register" id="signup">Sign up here</a></p>
+                           </div>
+                    </form>                 
+				</div>
+			</div>
+		</div>
+	</div>
+	<% include ./partials/footer %>
+</body>
+</html>
